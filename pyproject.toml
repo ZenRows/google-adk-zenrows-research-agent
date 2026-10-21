@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "google-adk-zenrows-research-agent"
+version = "0.1.0"
+description = "A Google ADK research agent that uses Zenrows to retrieve protected web pages."
+requires-python = ">=3.10"
+dependencies = [
+    "google-adk[mcp]>=2.9.2",
+    "python-dotenv>=1.0.0",
+    "requests>=2.32.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "ruff>=0.8.0",
+]
+
+[tool.setuptools]
+packages = ["zenrows_research_agent", "zenrows_mcp_agent"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 88
